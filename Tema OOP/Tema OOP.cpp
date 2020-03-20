@@ -27,7 +27,7 @@ public:
 
 	//destructor
 	~Nod() {
-		next = NULL;
+		delete this;
 	}
 
 	//metode de accesare a var, deoarece sunt private
@@ -148,11 +148,26 @@ public:
 
 		return (*dif);
 	}
+	
 
 };
 
+
+void reading() {
+	int i, n;
+	Stiva_de_caractere v[101];
+	cin >> n;
+	for (i = 0; i < n; i++)
+		cin >> v[i];
+	for (i = 0; i < n; i++)
+		cout << v[i] << " " << endl;
+	
+
+}
+
 int main()
 {
+	// reading();
 
 	cout << "Citeste o stiva. (se termina cu '~')" << endl;
 	Stiva_de_caractere S;
@@ -166,7 +181,7 @@ int main()
 	S1.flip(v);
 	cout << "Sirul inversat este: " << S1 << endl << endl;
 	
-	cout << "Citeste dous stive." << endl;
+	cout << "Citeste dous stive. (se termina cu '~')" << endl;
 	Stiva_de_caractere S3, S4, rez;
 	cout << "Stiva 1: ";  cin >> S3;
 	cout << "Stiva 2: "; cin >> S4;
